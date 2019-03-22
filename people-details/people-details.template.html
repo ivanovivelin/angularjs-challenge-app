@@ -1,0 +1,60 @@
+<md-card md-theme="{{ showDarkTheme ? 'dark-blue' : 'default' }}" md-theme-watch>
+        <img ng-src="{{$ctrl.person.img}}" style="width:100px;" alt="{{$ctrl.person.name}}">
+        <md-card-title>
+          <md-card-title-text>
+            <span class="md-headline">{{$ctrl.person.name}}</span>
+            <span class="md-subhead">{{$ctrl.person.Description}}</span>
+            <ul id="menu">
+                <li ng-repeat="x in [].constructor($ctrl.person.rating) track by $index">
+                    <i class="material-icons" style="width:25px;">
+                        star
+                    </i>
+                </li>
+                <li ng-if="$ctrl.person.rating < 5" ng-repeat="x in [].constructor(5 - $ctrl.person.rating) track by $index">
+                    <i class="material-icons" style="width:25px;">
+                        star_border
+                    </i>
+                </li>
+            </ul>
+          </md-card-title-text>
+          <md-card-title-media>
+            <div class="md-media-md card-media"></div>
+          </md-card-title-media>
+        </md-card-title>
+        <md-card-content>
+            <div layout="row">
+                <div flex>
+                    <md-toolbar layout="row" class="md-hue-3">
+                        <div class="md-toolbar-tools">
+                        <span>Likes</span>
+                        </div>
+                    </md-toolbar>
+                    <md-list class="md-dense" flex>
+                        <md-list-item class="md-3-line" ng-repeat="like in $ctrl.person.Likes" ng-click="null">
+                            <div class="md-list-item-text" layout="column">
+                                {{like}}
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </div>
+                <div flex>
+                    <md-toolbar layout="row" class="md-hue-3">
+                        <div class="md-toolbar-tools">
+                            <span>Dislikes</span>
+                        </div>
+                    </md-toolbar>
+                    <md-list class="md-dense" flex>
+                        <md-list-item class="md-3-line" ng-repeat="dislike in $ctrl.person.Dislikes" ng-click="null">
+                            <div class="md-list-item-text" layout="column">
+                                {{dislike}}
+                            </div>
+                        </md-list-item>
+                    </md-list>
+                </div>
+            </div>
+        </md-card-content>
+        <md-card-actions layout="row" layout-align="end center">
+          <md-button ng-click="ctrl.sendMessage()">Send Message !</md-button>
+          <md-button ui-sref="people">Close</md-button>
+        </md-card-actions>
+</md-card>

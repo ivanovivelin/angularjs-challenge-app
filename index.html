@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Challenge Application</title>
+      <!-- Angular Material style sheet -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" type="text/css" href="style.css">
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+
+      <!-- Angular Material requires Angular.js Libraries -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+
+      <!-- Angular Material Library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.22/angular-ui-router.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-resource.js"></script>
+      <script src="app.module.js"></script>
+      <script src="app.config.js"></script>
+      <script src="people-list/people-list.module.js"></script>
+      <script src="people-list/people-list.component.js"></script>
+      <script src="people-details/people-details.module.js"></script>
+      <script src="people-details/people-details.component.js"></script>
+      <script src="core/core.module.js"></script>
+      <script src="core/people/people.module.js"></script>
+      <script src="core/people/people.service.js"></script>
+      <script src="header/header.module.js"></script>
+      <script src="header/header.component.js"></script>
+      <script src="core/search/search.module.js"></script>
+      <script src="core/search/search.component.js"></script>
+  </head>
+  <body ng-app="challengeApp" ng-cloak>
+    <header-component view="root.view" on-view-change="root.view = $event.view"></header-component>
+    <div class="container">
+      <div ui-view view="root.view"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+.menudemoMenuDensity .md-menu-demo {
+  padding: 24px; 
+}
+
+.menudemoMenuDensity .menu-demo-container {
+  min-height: 200px; 
+}
+
+#menu {
+  padding: 0px;
+}
+
+ul#menu li {
+    display:inline;
+}
+
+.myCustomClass md-input-container .md-errors-spacer{
+    min-height: 0px !important;
+}
+
+md-input-container .md-input {
+    color: white !important;
+    border-color: rgba(0,0,0,0.12);
+}
+
+md-input-container label {
+    color: white !important;
+}

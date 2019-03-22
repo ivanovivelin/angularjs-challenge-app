@@ -1,0 +1,32 @@
+<md-toolbar class="myCustomClass">
+    <div class="md-toolbar-tools">
+        <md-input-container class="md-block" flex-gt-sm>
+            <label>Search</label>
+            <input ng-model="text" ng-change="$ctrl.setView(text)" style="max-width:300px;">
+        </md-input-container>
+        <h2 flex md-truncate>Challenge App</h2>
+        <md-button class="md-icon-button" aria-label="home" ui-sref="people" ui-sref-active="active">
+            <i class="material-icons">
+                home
+            </i>
+        </md-button>
+        <!-- If we have to add logic, this should be the current user -->
+        <md-menu md-position-mode="target-right target" >
+                <md-button aria-label="menu" class="md-icon-button" ng-click="$mdMenu.open($event)">
+                    <i class="material-icons">
+                        portrait
+                    </i>
+                </md-button>
+                <md-menu-content width="4" >
+                    <md-menu-item ng-repeat="item in ['Login', 'Logout']">
+                    <md-button ng-click="ctrl.announceClick($index)">
+                        <div layout="row" flex>
+                            <p flex>{{item}}</p>
+                        </div>
+                    </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+        </md-menu>
+        <h4>Ivelin Ivanov</h4>
+    </div>
+</md-toolbar>
